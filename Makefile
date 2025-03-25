@@ -1,2 +1,2 @@
 default:
-		 helm install $(component) . -f env-$(env)/$(component).yml
+		 helm install $(component) . -f env-$(env)/$(component).yaml
