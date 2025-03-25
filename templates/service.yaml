@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cart
+  name: {{ .Values.component_name }}
 spec:
   type: ClusterIP
   selector:
-    component: cart
+    component: {{ .Values.component_name }}
   ports:
     - port: 8080
       targetPort: 8080
