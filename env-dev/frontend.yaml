@@ -1,1 +1,5 @@
 component_name: frontend
+
+service:
+  port: "80"
+  containerPort: "80"
