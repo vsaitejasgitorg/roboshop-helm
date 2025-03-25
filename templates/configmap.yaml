@@ -2,5 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Values.component_name }}
+{{- with .Values.configmap_data }}
 data:
-  {{- include "Values.configmap_data" . | indent 2 }}
+  {{- toYaml . | nindent 2 }}
+{{- end }}
