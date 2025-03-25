@@ -1,8 +1,5 @@
 component_name: shipping
 
-service:
-  port: "8080"
-  containerPort: "8080"
 
 configmap_data:
   CART_ENDPOINT: "cart:8080"

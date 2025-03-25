@@ -1,8 +1,5 @@
 component_name: catalogue
 
-service:
-  port: "8080"
-  containerPort: "8080"
 
 configmap_data:
   MONGO: "true"
