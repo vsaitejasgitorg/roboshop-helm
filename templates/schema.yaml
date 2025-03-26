@@ -1,4 +1,4 @@
-{{ if .Values.schema.enabled }}
+  {{ if .Values.schema.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -9,10 +9,10 @@ spec:
       containers:
         - name: schema-load
           image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
-          {{- with .Values.schema.env }}
+           {{- with .Values.schema.env }}
           env:
             {{- toYaml . | nindent 10 }}
-          {{- end }}
+           {{- end }}
       restartPolicy: Never
   backoffLimit: 4
-  {{ end }}
+   {{ end }}
