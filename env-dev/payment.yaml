@@ -1,7 +1,5 @@
 component_name: payment
 
-
-
 configmap_data:
   CART_HOST: "cart"
   CART_PORT: "8080"
