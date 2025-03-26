@@ -10,6 +10,12 @@ configmap_data:
 
 schema:
   enabled: true
-  jobs:
-    - master-data
-  extention: js
+  env:
+    - name: DB_TYPE
+      value: mongo
+    - name: APP_GIT_URL
+      value: https://github.com/roboshop-devops-project-v3/catalogue
+    - name: DB_HOST
+      value: mongodb-dev.rdevopsb83.online
+    - name: SCHEMA_FILE
+      value: db/master-data.js
