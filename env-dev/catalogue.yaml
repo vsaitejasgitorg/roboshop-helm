@@ -1,19 +1,17 @@
 component_name: catalogue
 
-
 configmap_data:
   MONGO: "true"
-  MONGO_URL: "mongodb://mongodb-dev.saitejasroboshop.store:27017/catalogue"
-
+  MONGO_URL: "mongodb:///mongodb-dev.saitejasroboshop.store:27017/catalogue"
+  DB_TYPE: mongo
+  APP_GIT_URL: https://github.com/roboshop-devops-project-v3/catalogue
+  DB_HOST: /mongodb-dev.saitejasroboshop.store
 
 schema:
   enabled: true
-  env:
-    - name: DB_TYPE
-      value: mongo
-    - name: APP_GIT_URL
-      value: https://github.com/roboshop-devops-project-v3/catalogue
-    - name: DB_HOST
-      value: mongodb-dev.saitejasroboshop.store.online
-    - name: SCHEMA_FILE
-      value: db/master-data.js
+  jobs:
+    - master-data
+  extention: js
+
+
+
