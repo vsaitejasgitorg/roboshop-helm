@@ -5,7 +5,7 @@ metadata:
   labels:
     component: {{ .Values.component_name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       component: {{ .Values.component_name }}
