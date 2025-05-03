@@ -6,3 +6,11 @@ configmap_data:
   CATALOGUE_HOST: "catalogue"
   CATALOGUE_PORT: "8080"
   REDIS_HOST: "redis-dev.saitejasroboshop.store"
+
+resources:
+  requests:
+    memory: "50Mi"
+    cpu: "150m"
+  limits:
+    memory: "100Mi"
+    cpu: "250m"
