@@ -11,8 +11,8 @@ configmap_data:
 
 resources:
   requests:
-    memory: "500Mi"
+    memory: "1200Mi"
     cpu: "800m"
   limits:
-    memory: "1000Mi"
+    memory: "1500Mi"
     cpu: "1050m"
