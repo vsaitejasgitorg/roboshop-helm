@@ -6,6 +6,7 @@ metadata:
     wave.pusher.com/update-on-config-change: "true"
   labels:
     component: {{ .Values.component_name }}
+    log_type: {{ .Values.extra_labels.log_type }}
 spec:
   strategy:
     rollingUpdate:
@@ -15,10 +16,12 @@ spec:
   selector:
     matchLabels:
       component: {{ .Values.component_name }}
+      log_type: {{ .Values.extra_labels.log_type }}
   template:
     metadata:
       labels:
         component: {{ .Values.component_name }}
+        log_type: {{ .Values.extra_labels.log_type }}
     spec:
       containers:
         - name: roboshop-{{ .Values.component_name }}
