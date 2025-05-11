@@ -8,11 +8,11 @@ spec:
   template:
     spec:
       containers:
-        - name: schema-load
-          image:  713881792245.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}-schema:latest
-          envFrom:
-            - secretRef:
-                name: {{ .Values.component_name }}
+      - name: schema-load
+        image:  713881792245.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}-schema:latest
+        envFrom:
+          - secretRef:
+              name: {{ .Values.component_name }}
       restartPolicy: Never
   backoffLimit: 4
    {{ end }}
