@@ -1,5 +1,4 @@
 {{ if .Values.schema.enabled }}
-
 ---
 apiVersion: batch/v1
 kind: Job
@@ -16,6 +15,5 @@ spec:
                 name: {{ .Values.component_name }}
 
       restartPolicy: Never
-  backoffLimit: 4
-    
+  backoffLimit: 4    
     {{ end }}
