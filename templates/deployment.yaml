@@ -24,25 +24,25 @@ spec:
         log_type: {{ .Values.extra_labels.log_type }}
     spec:
       containers:
-        - name: roboshop-{{ .Values.component_name }}
-          image: 713881792245.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}:{{ .Values.imageTag }}
-          envFrom:
-            - secretRef:
-                name: {{ .Values.component_name }}
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: {{ .Values.service.containerPort }}
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: {{ .Values.service.containerPort }}
-            initialDelaySeconds: 30
-            periodSeconds: 3
-          {{- with .Values.resources }}
-          resources:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+      - name: roboshop-{{ .Values.component_name }}
+        image: 713881792245.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}:{{ .Values.imageTag }}
+        envFrom:
+          - secretRef:
+              name: {{ .Values.component_name }}
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.containerPort }}
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.service.containerPort }}
+          initialDelaySeconds: 30
+          periodSeconds: 3
+        {{- with .Values.resources }}
+        resources:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
 
